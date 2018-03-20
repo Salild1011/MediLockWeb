@@ -1,7 +1,6 @@
 # MediLockWeb
-Blockchain based Electronic Health Records(EHR) using Node.JS
 
-http://res.cloudinary.com/codestar1011/image/upload/v1521575926/logo_oqwm2y.png
+Blockchain based Electronic Health Records(EHR) using Node.JS
 
 During the course of hackathon, one of our fellow participants unfortunately suffered from a seizure. During such emergency the doctor showed up immediately, but couldn’t exactly give any medical assistance immediately due to the lack of knowledge about the patient’s medical history. This is exactly where our project ‘MediLock’ comes into the picture. In the essence, the doctor could have made use of MediLock to know about the patient’s history immediately and could have provided an accurate solution to the emergency.
 
