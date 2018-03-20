@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MediLock - Profile</title>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      window.WebSocket = window.WebSocket || window.MozWebSocket;
+
+      var connection = new WebSocket('ws://127.0.0.1:1355');
+
+      connection.onopen = function () {
+        // connection is opened and ready to use
+        var msg = {"id": "123456"}
+        connection.send(JSON.stringify(msg));
+      };
+
+      connection.onerror = function (error) {
+        // an error occurred when sending/receiving data
+      };
+
+      connection.onmessage = function (message) {
+        // try to decode json (I assume that each message
+        // from server is json)
+        try {
+          var json = JSON.parse(message.data);
+          console.log(message);
+        } catch (e) {
+          console.log('This doesn\'t look like a valid JSON: ',
+              message.data);
+          return;
+        }
+        // handle incoming message
+      };
+    });
+  </script>
+</body>
+</html>
